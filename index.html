@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#140f2f" />
+    <title>EMIFlow | Smart Loan Planner</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <div class="orb orb-one"></div>
+      <div class="orb orb-two"></div>
+      <div class="orb orb-three"></div>
+
+      <div class="energy-network" aria-hidden="true">
+        <svg viewBox="0 0 1200 640" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="energyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#48d1ff" stop-opacity="0.2" />
+              <stop offset="30%" stop-color="#89f0ff" stop-opacity="1" />
+              <stop offset="65%" stop-color="#66f2c4" stop-opacity="1" />
+              <stop offset="100%" stop-color="#ff5db1" stop-opacity="0.7" />
+            </linearGradient>
+            <filter id="energyGlow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3.2" result="blur" />
+              <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
+          </defs>
+          <path
+            class="energy-track"
+            d="M 40 200 C 180 150, 250 260, 390 240 S 650 90, 760 205 S 980 210, 1140 160"
+          />
+          <path
+            class="energy-flow"
+            d="M 40 200 C 180 150, 250 260, 390 240 S 650 90, 760 205 S 980 210, 1140 160"
+          />
+          <path
+            class="energy-track energy-track-short"
+            d="M 170 450 C 360 420, 460 520, 620 470 S 890 410, 1065 520"
+          />
+          <path
+            class="energy-flow energy-flow-short"
+            d="M 170 450 C 360 420, 460 520, 620 470 S 890 410, 1065 520"
+          />
+        </svg>
+      </div>
+
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">₹</div>
+          <div class="brand-copy">
+            <h2>EMIFlow</h2>
+            <span>Smart Finance</span>
+          </div>
+        </div>
+
+        <nav class="top-actions" aria-label="Main navigation">
+          <span class="chip active">India</span>
+          <span class="chip">Home</span>
+          <span class="chip">Car</span>
+          <span class="chip">Personal</span>
+        </nav>
+      </header>
+
+      <main class="content-grid">
+        <section class="hero-panel">
+          <div class="badge">Smart EMI planner</div>
+          <h1>Make your dream loan feel easy.</h1>
+          <p>
+            See your monthly EMI, interest burden, and total repayment in a beautiful,
+            stress-free dashboard built for confident decisions.
+          </p>
+
+          <div class="cta-row">
+            <button class="primary-btn">Calculate now</button>
+            <button class="secondary-btn">Compare offers</button>
+          </div>
+
+          <div class="stat-row">
+            <div class="mini-stat">
+              <span>Avg. EMI</span>
+              <strong>₹ 34,800</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Rate</span>
+              <strong>8.5%</strong>
+            </div>
+            <div class="mini-stat">
+              <span>Tenure</span>
+              <strong>5 yrs</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="calculator-panel">
+          <div class="panel-header">
+            <div>
+              <p class="eyebrow">Loan details</p>
+              <h3>Customize your plan</h3>
+            </div>
+            <div class="live-pill">Live</div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-header">
+              <label for="loanAmount">Loan Amount</label>
+              <span class="field-value" id="loanDisplay">₹ 10,00,000</span>
+            </div>
+            <div class="input-shell">
+              <span>₹</span>
+              <input type="number" id="loanAmount" value="1000000" min="10000" max="100000000" step="10000" />
+            </div>
+            <input class="range" id="loanSlider" type="range" min="10000" max="10000000" step="10000" value="1000000" />
+            <div class="range-labels">
+              <span>₹10K</span>
+              <span>₹1Cr</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-header">
+              <label for="interestRate">Interest Rate</label>
+              <span class="field-value" id="rateDisplay">8.5%</span>
+            </div>
+            <div class="input-shell small">
+              <input type="number" id="interestRate" value="8.5" min="1" max="30" step="0.1" />
+              <span>%</span>
+            </div>
+            <input class="range" id="interestSlider" type="range" min="1" max="30" step="0.1" value="8.5" />
+            <div class="range-labels">
+              <span>1%</span>
+              <span>30%</span>
+            </div>
+          </div>
+
+          <div class="field-group">
+            <div class="field-header">
+              <label for="tenure">Loan Tenure</label>
+              <span class="field-value" id="tenureDisplay">5 Years</span>
+            </div>
+            <div class="input-shell small">
+              <input type="number" id="tenure" value="5" min="1" max="30" />
+              <span>Yr</span>
+            </div>
+            <input class="range" id="tenureSlider" type="range" min="1" max="30" step="1" value="5" />
+            <div class="range-labels">
+              <span>1 Year</span>
+              <span>30 Years</span>
+            </div>
+          </div>
+
+          <div class="loan-type-wrap">
+            <span>Loan type</span>
+            <div class="loan-type-row">
+              <button class="loan-btn active" data-type="Home">🏠 Home</button>
+              <button class="loan-btn" data-type="Car">🚗 Car</button>
+              <button class="loan-btn" data-type="Personal">👤 Personal</button>
+            </div>
+          </div>
+        </section>
+
+        <aside class="summary-panel">
+          <div class="result-card hero-card">
+            <p>Estimated EMI</p>
+            <h2 id="emiValue">₹ 0</h2>
+            <span id="loanTypeLabel">Home Loan</span>
+          </div>
+
+          <div class="result-grid">
+            <div class="result-box">
+              <span>Principal</span>
+              <strong id="principalValue">₹ 0</strong>
+            </div>
+            <div class="result-box">
+              <span>Total interest</span>
+              <strong id="totalInterestValue">₹ 0</strong>
+            </div>
+            <div class="result-box full">
+              <span>Total repayment</span>
+              <strong id="totalPaymentValue">₹ 0</strong>
+            </div>
+          </div>
+
+          <div class="split-bar">
+            <div class="split-fill principal-fill" id="principalBar"></div>
+            <div class="split-fill interest-fill" id="interestBar"></div>
+          </div>
+
+          <div class="legend-row">
+            <span><i class="dot principal-dot"></i> Principal</span>
+            <span><i class="dot interest-dot"></i> Interest</span>
+            <strong id="loanPercent">67%</strong>
+          </div>
+
+          <div class="insight-box">
+            <p class="insight-label">Smart insight</p>
+            <p id="insightText">
+              Your principal makes up most of the repayment. This indicates a balanced and efficient loan structure.
+            </p>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
